@@ -97,7 +97,7 @@ async function runUserCode() {
 
     try {
         let fn = new Function(userCode);
-        // await run(fn, "main");
+        await run(fn, "main");
     } catch (e) {
         addLog("Error: " + e.message);
     }
