@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Enter Your Code </h2>
+
+<textarea id="code">
+console.log("Start");
+
+myPromise(() => {
+  console.log("Promise");
+});
+
+setTimeoutSim(() => {
+  console.log("Timeout");
+});
+
+console.log("End");
+</textarea>
+
+<button onclick="runUserCode()">Run Code</button>
+
+<div class="container">
+  <div class="box">
+    <h3>Call Stack</h3>
+    <div id="stack"></div>
+  </div>
+
+  <div class="box">
+    <h3>Microtask Queue</h3>
+    <div id="micro"></div>
+  </div>
+
+  <div class="box">
+    <h3>Callback Queue</h3>
+    <div id="callback"></div>
+  </div>
+
+  <div class="box">
+    <h3>Logs</h3>
+    <div id="logs"></div>
+  </div>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
