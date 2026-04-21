@@ -34,7 +34,6 @@ function sleep(ms) {
     return new Promise(res => setTimeout(res, ms));
 }
 
-// ================= RUN =================
 async function run(fn, name) {
     callStack.push(name);
     render();
@@ -50,7 +49,6 @@ async function run(fn, name) {
     await checkCallbacks();
 }
 
-// ================= MICROTASK =================
 function myPromise(fn) {
     microTaskQueue.push({ fn, name: "Promise" });
     // addLog("Microtask added");
@@ -66,7 +64,6 @@ async function checkMicrotasks() {
     }
 }
 
-// ================= CALLBACK =================
 function setTimeoutSim(fn) {
     callbackQueue.push({ fn, name: "Timeout" });
     // addLog("Callback added");
@@ -82,7 +79,6 @@ async function checkCallbacks() {
     }
 }
 
-// ================= USER CODE RUN =================
 async function runUserCode() {
     // reset state
     callStack = [];
